@@ -230,3 +230,79 @@ let user2 = {
 };
 console.log(user1.address?.city ?? "City not available");
 console.log(user2.address?.city ?? "City not available");
+
+
+
+//Task1:
+let campusName = "S.A. Engineering College"; 
+function printCampusName() {
+    console.log(campusName);
+}
+printCampusName();
+
+//Task 2:
+if (true) {
+    let a = 10;
+    var b = 20;
+    console.log(a); 
+    console.log(b); 
+}
+console.log(b);
+
+//Task 3:Example var:
+console.log(x); 
+var x = 10;
+console.log(x); 
+
+
+
+/* Task 1: Click event */
+document.getElementById("clickBtn")
+    .addEventListener("click", function () {
+        document.getElementById("status").textContent =
+            "Button clicked successfully!";
+    });
+
+/* Task 2: Live character count */
+document.getElementById("message")
+    .addEventListener("input", function () {
+        document.getElementById("count").textContent =
+            this.value.length;
+    });
+
+/* Task 3 & 4: Registration form */
+document.getElementById("registerForm")
+    .addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const feedback = document.getElementById("feedback");
+
+        if (name === "" || email === "") {
+            feedback.textContent = "Error: Please fill in all fields.";
+            feedback.style.color = "red";
+        } else {
+            feedback.textContent =
+                "Registration successful! Welcome, " + name + ".";
+            feedback.style.color = "green";
+        }
+    });
+
+/* Challenge: One parent listener for all Join buttons */
+document.getElementById("eventCards")
+    .addEventListener("click", function (event) {
+        if (event.target.classList.contains("joinBtn")) {
+            const eventName = event.target.parentElement
+                .querySelector("h3").textContent;
+
+            document.getElementById("joinStatus").textContent =
+                "You joined " + eventName + "!";
+        }
+    });
+
+
+    //
+    console.log("One");
+    setTimeout(()=>console.log("Two"),0);
+    console.log("Three");
